@@ -1,10 +1,10 @@
 package com.jkb.weatherapp.data.remote
 
 import com.jkb.weatherapp.data.model.WeatherResponse
-import retrofit2.Call
+import retrofit2.Response
 
 class WeatherRespository {
-    fun getWeather(cityName: String, apiKey: String): Call<WeatherResponse> {
+    suspend fun getWeather(cityName: String, apiKey: String): Response<WeatherResponse> {
         return RetrofitInstance.api.getCurrentWeather(cityName, apiKey)
     }
 }
